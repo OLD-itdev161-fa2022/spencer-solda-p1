@@ -1,2 +1,2 @@
 # spencer-solda-p1
-# testing
+# resume at Setup An Express Server in activity 2

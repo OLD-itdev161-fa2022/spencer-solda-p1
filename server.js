@@ -29,11 +29,39 @@ app.get('/cat', (req, res) =>
 );
 
 app.get('/sloth', (req, res) =>
- res.send('<img src="https://files.worldwildlife.org/wwfcmsprod/images/Baby_Sloth_Hanging_iStock_3_12_2014/portrait_overview/4zhzw2pmf0_iStock_000016816803XLarge_mini.jpg" alt="Girl in a jacket" width="500" height="600">')
+ res.send('<img src="https://files.worldwildlife.org/wwfcmsprod/images/Baby_Sloth_Hanging_iStock_3_12_2014/portrait_overview/4zhzw2pmf0_iStock_000016816803XLarge_mini.jpg">')
 );
 
-app.get('/giraffelist', (req, res) =>
+app.get('/giraffe', (req, res) =>
  res.send(['Northern Giraffe', 'Reticulated Giraffe', 'Masai giraffe'])
+);
+
+app.get('/elk', (req, res) =>
+res.sendFile('elk.html', {root: __dirname})
+);
+
+app.get('/eagle', (req, res) =>
+res.download('eagle.pdf')
+);
+
+app.get('/fish', (req, res) =>
+res.redirect('https://en.wikipedia.org/wiki/Fish')
+);
+
+app.get('/dinosaur', (req, res) =>
+res.sendStatus(410)
+);
+
+app.get('/squirrel', (req, res) =>
+res
+.cookie('squirrelcookie', 'true')
+.send('<img src="https://i.ytimg.com/vi/cfRQ0Z6J4dM/maxresdefault.jpg">')
+);
+
+app.get('/squirrel2', (req, res) =>
+res
+.clearCookie('squirrelcookie')
+.send('<img src="https://laughingsquid.com/wp-content/uploads/2014/11/Chipmunk.jpg">')
 );
 
 /**

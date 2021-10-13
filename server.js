@@ -17,7 +17,23 @@ app.use(express.json({ extended: false}));
  * @desc Test endpoint
  */
  app.get('/', (req, res) =>
- res.send('http get request sent to root api endpoint')
+ res.send('Welcome to project one.')
+);
+
+app.get('/dog', (req, res) =>
+ res.send('Woof.')
+);
+
+app.get('/cat', (req, res) =>
+ res.send('Meow.')
+);
+
+app.get('/sloth', (req, res) =>
+ res.send('<img src="https://files.worldwildlife.org/wwfcmsprod/images/Baby_Sloth_Hanging_iStock_3_12_2014/portrait_overview/4zhzw2pmf0_iStock_000016816803XLarge_mini.jpg" alt="Girl in a jacket" width="500" height="600">')
+);
+
+app.get('/giraffelist', (req, res) =>
+ res.send(['Northern Giraffe', 'Reticulated Giraffe', 'Masai giraffe'])
 );
 
 /**
